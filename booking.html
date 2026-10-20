@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись на визит</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+<body>
+    <div class="booking-page">
+        <div class="form-container">
+            <a href="index.html" class="back-link">← Вернуться назад</a>
+            <h2>Запись на услугу</h2>
+            
+            <!-- Сервис FormSubmit отправит данные тебе на почту -->
+            <form action="https://formsubmit.co/pupkinr666@gmail.com" method="POST">
+                
+                <!-- Настройка: после отправки вернет на главную -->
+                <input type="hidden" name="_next" value="https://olegaganster.github.io/coffee-time/index.html">
+                <!-- Настройка: убирает капчу -->
+                <input type="hidden" name="_captcha" value="false">
+
+                <label>Ваше Имя</label>
+                <input type="text" name="name" placeholder="Иван Иванов" required>
+
+                <label>Номер телефона</label>
+                <input type="tel" name="phone" placeholder="+7 (999) 000-00-00" required>
+
+                <label>Выберите услугу</label>
+                <select name="service" required>
+                    <option value="Стрижка">Стрижка</option>
+                    <option value="Маникюр">Маникюр</option>
+                    <option value="Борода">Оформление бороды</option>
+                </select>
+
+                <div class="datetime">
+                    <div>
+                        <label>Дата</label>
+                        <input type="date" name="date" required>
+                    </div>
+                    <div>
+                        <label>Время</label>
+                        <input type="time" name="time" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Подтвердить запись</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

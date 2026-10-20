@@ -1,0 +1,177 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+
+body { background-color: #fcfcfc; color: #333; }
+
+/* Шапка */
+.header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-book {
+    background-color: #d4af37; /* Золотистый цвет */
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Контент */
+.container { padding: 40px 5%; }
+.title { margin-bottom: 30px; text-align: center; }
+
+.services-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 280px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.card img { width: 100%; height: 200px; object-fit: cover; }
+
+/* Форма записи */
+.booking-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.back-link { display: block; margin-bottom: 20px; color: #666; text-decoration: none; }
+
+form label { display: block; margin-top: 15px; font-weight: bold; font-size: 14px; }
+
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.datetime { display: flex; gap: 10px; }
+.datetime div { flex: 1; }
+
+.submit-btn {
+    width: 100%;
+    margin-top: 25px;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.submit-btn:hover { background-color: #333; }
+.card:hover{
+    transform: scale(0.9);
+}
+/* ========================================================
+   МОБИЛЬНАЯ ВЕРСИЯ (для экранов меньше 768px)
+   ======================================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Настройка шапки */
+    .header {
+        flex-direction: column; /* Элементы в колонку */
+        gap: 15px;
+        padding: 15px 5%;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    /* 2. Настройка сетки услуг */
+    .container {
+        padding: 20px 5%;
+    }
+
+    .services-grid {
+        gap: 15px;
+    }
+
+    .card {
+        width: 100%; /* Карточка на всю ширину */
+        max-width: 320px; /* Но не слишком широкая */
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    /* 3. Настройка страницы записи (booking.html) */
+    .booking-page {
+        padding: 10px;
+        align-items: flex-start; /* Чтобы форма не "улетала" вниз на маленьких экранах */
+    }
+
+    .form-container {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: none; /* Убираем лишние тени для чистоты */
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    /* Делаем поля ввода крупнее для удобства нажатия пальцем */
+    form input, form select, .submit-btn {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    /* Ставим Дату и Время друг под другом на очень узких экранах */
+    .datetime {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .datetime div {
+        width: 100%;
+    }
+
+    /* Кнопка "Назад" */
+    .back-link {
+        font-size: 14px;
+    }
+}
+
+/* Настройка для совсем маленьких телефонов (до 400px) */
+@media (max-width: 400px) {
+    .header .btn-book {
+        width: 100%;
+        text-align: center;
+    }
+}
